@@ -3,4 +3,4 @@ alias dredis='docker run -d --name redis -p 6379:6379 redis'
 alias drac='docker rm -f $(docker ps -aq)'
 alias dmongo='docker run -d --name mongo -p 27017:27017 mongo'
 
-alias docker-kill='docker system prune'
+alias docker-clean='docker system prune'
