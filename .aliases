@@ -20,6 +20,12 @@ alias gco='git checkout'
 alias gb='git branch'
 alias gs='git status'
 alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
+alias gpf='gp origin $(git rev-parse --abbrev-ref HEAD) -f'
+alias git-squash='git reset --soft HEAD~$(expr $(git rev-list --count HEAD) - $(git rev-list --count origin/master)) && git commit'
+alias gsq='git squash'
+alias gsqd='git squash -d '
+alias gsqc='git squash -c '
+alias gsqm='git squash -d master '
 
 #homebrew
 
@@ -30,7 +36,10 @@ alias brewu="brew update"
 
 #youtube-dl
 
-
 # download video from youtube format mp3 
 alias dl-you="youtube-dl --extract-audio --audio-format mp3"
+alias playlist='youtube-dl -ci  --extract-audio --audio-format mp3 -o "%(title)s.%(ext)s"'
 
+# python
+
+alias poetry_shell='. "$(dirname $(poetry run which python))/activate"'
