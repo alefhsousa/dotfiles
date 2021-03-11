@@ -41,5 +41,14 @@ alias dl-you="youtube-dl --extract-audio --audio-format mp3"
 alias playlist='youtube-dl -ci  --extract-audio --audio-format mp3 -o "%(title)s.%(ext)s"'
 
 # python
-
 alias poetry_shell='. "$(dirname $(poetry run which python))/activate"'
+
+
+#docker 
+
+alias drrabbit='docker run --name RabbitLocal -d -p 5672:5672 -p 15672:15672 -p 4369:4369 -p 5671:5671 -p 15671:15671 -e RABBITMQ_HIPE_COMPILE=1 rabbitmq:3.6-management '
+alias dredis='docker run -d --name redis -p 6379:6379 redis'
+alias drac='docker rm -f $(docker ps -aq)'
+alias dmongo='docker run -d --name mongo -p 27017:27017 mongo'
+alias dmysql='docker run --name mysql -e MYSQL_ROOT_PASSWORD=root -p 3306:3306 -d mysql'
+alias docker-clean='docker system prune'
